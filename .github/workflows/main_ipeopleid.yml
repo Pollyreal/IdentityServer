@@ -23,7 +23,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build Duende.IdentityServer.Core.sln --configuration Release
+        run: dotnet build hosts/main/Host.Main.csproj --configuration Release
 
       - name: dotnet publish
         run: dotnet publish hosts/main/Host.Main.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp -f net6.0
