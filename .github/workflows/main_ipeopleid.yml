@@ -19,14 +19,14 @@ jobs:
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '7.0.0-rc.1.22426.10'
+          dotnet-version: '6.0.*'
           include-prerelease: true
 
       - name: Build with dotnet
         run: dotnet build Duende.IdentityServer.Core.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish hosts/main7/Host.Main7.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp -f net7.0
+        run: dotnet publish hosts/main/Host.Main.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp -f net6.0
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
