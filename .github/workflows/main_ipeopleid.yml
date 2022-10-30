@@ -26,7 +26,7 @@ jobs:
         run: dotnet build Duende.IdentityServer.Core.sln --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish Duende.IdentityServer.Core.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp -f net7.0*
+        run: dotnet publish ~/hosts/main7/Host.Main7.csproj -c Release -o ${{env.DOTNET_ROOT}}/myapp -f net7.0
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
